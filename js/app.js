@@ -98,10 +98,24 @@ console.log(array);
 
 //8.Написать функцию arraysHasElement** которая принимает 3 параметра, массив, массив и элемент
 // и возвращает true/false если их оба массива имеют этот элемент.
-const firstArray = [12, 24, 14, 252, 2342, 213, 21234, 241]
-const secondArray = [17, 23, 14, 262, 22, 213, 213234, 2431]
-const element = 213;
-function arraysHasElement(arr1, arr2, element) {
-    return !!(arr1.includes(element) && arr2.includes(element));
+let firstArrayHasThisElement = false;
+let secondArrayHasThisElement = false;
+
+
+function arraysHasElement(arr1, arr2, el) {
+
+    for (let i = 0; i < arr1.length; i++) {
+        if (arr1.includes(el)) {
+            firstArrayHasThisElement = true;
+        }
+    }
+
+    for (let i = 0; i < arr2.length; i++) {
+        if (arr2.includes(el)){
+            secondArrayHasThisElement = true;
+        }
+    }
+
+    return firstArrayHasThisElement === true && secondArrayHasThisElement === true;
 }
-console.log(arraysHasElement(firstArray,secondArray,element))
+console.log(arraysHasElement([1, 12, 24, 'papa', 'mama', true],[21, 11, 'paps', 24, 'mams', false],24))
