@@ -22,10 +22,14 @@ console.log(arrayHasElement(['shoes', 'true', 4, ], 'shoes'));
 //3.Написать функцию getLetterAmountInString которая принимает два парамметра, 1ый строка, 2ой буква, и возвращает количество раз,
 //сколько буква встретилась в этой строке
 
-function getLetterAmountInString(a,b){
-    let string = 'looking fot a letter';
-    let letter = (string.match(/o/g) || []).length;
-    console.log(letter);
+function getLetterAmountInString(str,lit){
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === lit) {
+             count++;
+        }
+    }
+    return count;
 }
 console.log(getLetterAmountInString('looking fot a letter','o'));
 
